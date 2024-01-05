@@ -1,13 +1,32 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useActiveSection } from "@/contexts/ActiveSectionContextProvider";
+
 import { BsArrowRight, BsLinkedin, BsDownload } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
+
 function Intro() {
+  const { ref, inView } = useInView();
+  const { setActiveSection,timeOfLastClick } = useActiveSection();
+  useEffect(() => {
+    if (inView&& Date.now() - timeOfLastClick>1000) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection,timeOfLastClick]);
+
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] " id="home">
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] "
+      id="home"
+      ref={ref}
+    >
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -45,8 +64,13 @@ function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Shihabul Islam  here!</span> A passionate<span className="font-bold"> front-end developer</span> with{" "}
-        <span className="font-bold">a year's</span> of hands-on expertise. I specialize on crafting <span className="italic">seamless websites and apps</span>, with a keen focus on React ,  particularly <span className="underline">Next.JS</span>.
+        <span className="font-bold">Shihabul Islam here!</span> A passionate
+        <span className="font-bold"> front-end developer</span> with{" "}
+        <span className="font-bold">a year's</span> of hands-on expertise. I
+        specialize on crafting{" "}
+        <span className="italic">seamless websites and apps</span>, with a keen
+        focus on React , particularly <span className="underline">Next.JS</span>
+        .
       </motion.h1>
 
       <motion.div

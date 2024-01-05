@@ -1,15 +1,16 @@
 "use client";
+
 import Header from "@/components/Header";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import {ActiveSectionContextProvider }from "@/contexts/ActiveSectionContextProvider";
+import { ActiveSectionContextProvider } from "@/contexts/ActiveSectionContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Md Shihabul Islam | Frontend Developer",
   description:
-    "Md Shihabul Islam is a frontend developer based in Rajshahi, Bangladesh.",
+    "Md Shihabul Islam is a frontend developer based in Rajshahi, Bangladesh."
 };
 
 export default function RootLayout({
@@ -19,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <head><title>Md Shihabul Islam | Frontend Developer</title>
+        <meta name="description" content="Md Shihabul Islam is a frontend developer based in Rajshahi, Bangladesh." />
+      </head>
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 pt-28 sm:pt-36 relative h-[5000px] `}
       >
