@@ -1,4 +1,4 @@
-"use cleint";
+"use client";
 import { useTheme } from "@/contexts/ThemeContext";
 import { BsMoon, BsSun } from "react-icons/bs";
 

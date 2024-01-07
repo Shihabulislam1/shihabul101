@@ -1,4 +1,3 @@
-"use client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,13 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <head>
+      {/* <head>
         <title>Md Shihabul Islam | Frontend Developer</title>
         <meta
           name="description"
           content="Md Shihabul Islam is a frontend developer based in Rajshahi, Bangladesh."
         />
-      </head>
+      </head> */}
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 pt-28 sm:pt-36 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 `}
       >
