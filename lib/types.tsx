@@ -14,3 +14,5 @@ export type ActiveSectionContextType = {
   timeOfLastClick: number;
   setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
 };
+
+export type Theme = "light" | "dark";

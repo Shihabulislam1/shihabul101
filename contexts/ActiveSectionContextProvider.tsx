@@ -1,6 +1,9 @@
 import React, { useState, useContext, createContext } from "react";
-import { links } from "@/lib/data";
-import { SectionName,ActiveSectionContextType,ActiveSectionContextProviderProps } from "@/lib/types";
+import {
+  SectionName,
+  ActiveSectionContextType,
+  ActiveSectionContextProviderProps,
+} from "@/lib/types";
 
 const ActiveSectionContext = createContext<ActiveSectionContextType | null>(
   null
@@ -35,7 +38,5 @@ const useActiveSection = () => {
   }
   return context;
 };
-
-
 
 export { ActiveSectionContextProvider, useActiveSection };
